@@ -16,6 +16,7 @@ El sistema incluye una landing page atractiva con:
 - 📲 Footer con redes sociales.  
 
 Diseñada con **Bootstrap 5, FontAwesome, Google Fonts y AOS animations**.
+![alt text](image.png)
 
 ---
 
