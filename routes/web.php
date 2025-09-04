@@ -8,6 +8,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NotasController;
+use App\Http\Controllers\MateriasController;
+
+
+
 
 
 
@@ -41,6 +45,12 @@ Route::get('/', [NotasController::class, 'index'])->name('recepcion.notas');
 
 });
 
+//////// Materias   ///////////
+Route::prefix('Alumnos-Materias')->middleware(['auth','active', 'role:recepcion,admin'])->group(function(){
+
+Route::get('/', [MateriasController::class, 'index'])->name('materias.index');
+
+});
 //////// administracion usuarios   ///////////
 Route::prefix('administracion-usuarios')->middleware(['auth','active', 'role:admin'])->group(function(){
       Route::get('/', [UserController::class, 'index'])->name('usuarios.index');
