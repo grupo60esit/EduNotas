@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NotasController;
 
 
 
@@ -33,12 +34,19 @@ Route::get('/', [RecepcionController::class, 'index'])->name('recepcion');
 
 });
 
+//////// Notas   ///////////
+Route::prefix('NotasAlumnos')->middleware(['auth','active', 'role:recepcion,admin'])->group(function(){
+
+Route::get('/', [NotasController::class, 'index'])->name('recepcion.notas');
+
+});
+
 //////// administracion usuarios   ///////////
 Route::prefix('administracion-usuarios')->middleware(['auth','active', 'role:admin'])->group(function(){
       Route::get('/', [UserController::class, 'index'])->name('usuarios.index');
 
 });
-// Mostrar etiqueta imprimible por tracking
+
 
 
 Route::middleware(['auth','active', 'role:admin'])->group(function () {

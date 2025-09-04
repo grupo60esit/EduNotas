@@ -28,6 +28,11 @@
                                         <input type="text" class="form-control" id="nombre_alumno" name="nombre_alumno"
                                             required>
                                     </div>
+                                      <div class="mb-3 col-12">
+                                        <label for="nombre_correo" class="form-label">Correo</label>
+                                        <input type="text" class="form-control" id="nombre_correo" name="nombre_correo"
+                                            required>
+                                    </div>
                                 </div>
                             </div>
                         </div>

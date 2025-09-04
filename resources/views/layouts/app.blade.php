@@ -100,7 +100,7 @@
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <h6 class="collapse-header">Recepcion de Alumnos:</h6>
                                 <a class="collapse-item" href="{{ route('recepcion') }}">Nuevo Alumno</a>
-                                <a class="collapse-item" href="#">Notas</a>
+                                <a class="collapse-item" href="{{ route('recepcion.notas') }}">Notas</a>
                             </div>
                         </div>
                     </li>
