@@ -93,7 +93,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRecepcion"
                             aria-expanded="false" aria-controls="collapseRecepcion">
-                            <i class="fa-solid fa-parachute-box" style="color: #195231;"></i>
+               <i class="fa-solid fa-bell-concierge" style="color: #63E6BE;"></i>
                             <span>Recepcion</span>
                         </a>
                         <div id="collapseRecepcion" class="collapse" data-parent="#accordionSidebar">
@@ -110,7 +110,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBodega"
                             aria-expanded="false" aria-controls="collapseBodega">
-                            <i class="fa-solid fa-boxes-stacked" style="color: #195231;"></i>
+                          <i class="fa-solid fa-book-open-reader" style="color: #63E6BE;"></i>
                             <span>Materias</span>
                         </a>
                         <div id="collapseBodega" class="collapse" data-parent="#accordionSidebar">
@@ -126,7 +126,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRuteo"
                             aria-expanded="false" aria-controls="collapseRuteo">
-                            <i class="fa-solid fa-dolly" style="color: #195231;"></i>
+                       <i class="fa-solid fa-clipboard" style="color: #63E6BE;"></i>
                             <span>Notas</span>
                         </a>
                         <div id="collapseRuteo" class="collapse" data-parent="#accordionSidebar">
@@ -144,7 +144,7 @@
                         <a class="nav-link collapsed" href="#" data-toggle="collapse"
                             data-target="#collapseconfiguraciones" aria-expanded="false"
                             aria-controls="collapseconfiguraciones">
-                            <i class="fa-solid fa-gear" style="color: #195231;"></i>
+                            <i class="fa-solid fa-gear" style="color: #bdff24;"></i>
                             <span>Configuraciones</span>
                         </a>
                         <div id="collapseconfiguraciones" class="collapse" data-parent="#accordionSidebar">
@@ -163,7 +163,7 @@
                         <a class="nav-link collapsed" href="#" data-toggle="collapse"
                             data-target="#collapseAdministracion" aria-expanded="false"
                             aria-controls="collapseAdministracion">
-                            <i class="fa-solid fa-user-gear" style="color: #195231;"></i>
+                            <i class="fa-solid fa-user-gear" style="color: #f15d07;"></i>
                             <span>Administracion</span>
                         </a>
                         <div id="collapseAdministracion" class="collapse" data-parent="#accordionSidebar">

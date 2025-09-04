@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Recepcion;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-//use App\Models\Paquete;
+use App\Models\Materia;
 class RecepcionController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class RecepcionController extends Controller
     public function index()
     {
         //
-        return view('app.recepcion.index');
+       $materias = Materia::all();
+        return view('app.recepcion.index',compact('materias'));
     }
 
     /**

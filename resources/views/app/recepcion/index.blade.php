@@ -70,22 +70,22 @@
 
                                     <div class="mb-3 col-md-6">
                                         <label for="tipo_paquete" class="form-label">Tipo de Matricula</label>
-                                        <select class="form-select" id="tipo_paquete" name="tipo_paquete"
-                                            onchange="calcularCosto()">
-                                            <option value="">Seleccione...</option>
-                                            <option value="1">Curso de Verano</option>
-                                            <option value="2">Incripcion de Matricula</option>
-                                            <option value="3">Refuerzos</option>
-                                            <option value="4">Deporte</option>
-                                            <option value="5">Danza Moderna</option>
+                                        <select class="form-select" id="tipo_paquete" name="tipo_paquete">
+                                             <option value="">Seleccione...</option>
+
+
+
+
                                         </select>
                                     </div>
 
                                     <div class="mb-3 col-md-6">
                                         <label for="destino" class="form-label">Materia</label>
                                         <select class="form-select" id="destino" name="destino" required>
-                                            <option value="sucursal_1">Opcion 1</option>
-                                            <option value="sucursal_2">opcion 2</option>
+                                             <option value="">Seleccione...</option>
+                                          @foreach ($materias as $materia )
+                                                 <option value="{{ $materia->id }}">{{ $materia->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
@@ -109,9 +109,9 @@
                                     </div>
 
                                     <div class="mb-3 col-md-6">
-                                        <label for="estatus" class="form-label">Comentario</label>
+                                        <label for="estatus" class="form-label">Estado</label>
                                         <select class="form-select" id="estatus" name="estatus" required>
-                                            <option class="" value="recepcionado">Suscrito</option>
+                                            <option class="" value="recepcionado">Nuevo</option>
 
                                         </select>
                                     </div>
