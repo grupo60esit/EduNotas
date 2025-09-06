@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumnosController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Recepcion\RecepcionController;
@@ -24,7 +25,7 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login')->m
 Route::post('/login', [AuthController::class, 'login'])->name('login.post')->middleware('guest');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/dashboard',[DashboardController::class, 'index'])->name('index.dashboardGeneral')->middleware(['auth', 'active']); // <- aquí agregas middleware
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('index.dashboardGeneral')->middleware(['auth', 'active']); // <- aquí agregas middleware
 
 
 
@@ -32,46 +33,36 @@ Route::get('/dashboard',[DashboardController::class, 'index'])->name('index.dash
 
 
 //////// Recepcion   ///////////
-Route::prefix('Recepcion')->middleware(['auth','active', 'role:recepcion,admin'])->group(function(){
+Route::prefix('Recepcion')->middleware(['auth', 'active', 'role:recepcion,admin'])->group(function () {
 
-Route::get('/', [RecepcionController::class, 'index'])->name('recepcion');
-
+    Route::get('/', [RecepcionController::class, 'index'])->name('recepcion');
+    Route::post('/', [AlumnosController::class, 'store'])->name('alumnos.store');
+    Route::get('/alumnos', [AlumnosController::class, 'index'])->name('alumnos.index');
 });
 
 //////// Notas   ///////////
-Route::prefix('NotasAlumnos')->middleware(['auth','active', 'role:recepcion,admin'])->group(function(){
+Route::prefix('NotasAlumnos')->middleware(['auth', 'active', 'role:recepcion,admin'])->group(function () {
 
-Route::get('/', [NotasController::class, 'index'])->name('recepcion.notas');
-
+    Route::get('/', [NotasController::class, 'index'])->name('recepcion.notas');
 });
 
 //////// Materias   ///////////
-Route::prefix('Alumnos-Materias')->middleware(['auth','active', 'role:recepcion,admin'])->group(function(){
+Route::prefix('Alumnos-Materias')->middleware(['auth', 'active', 'role:recepcion,admin'])->group(function () {
 
-Route::get('/', [MateriasController::class, 'index'])->name('materias.index');
-
+    Route::get('/', [MateriasController::class, 'index'])->name('materias.index');
 });
 //////// administracion usuarios   ///////////
-Route::prefix('administracion-usuarios')->middleware(['auth','active', 'role:admin'])->group(function(){
-      Route::get('/', [UserController::class, 'index'])->name('usuarios.index');
-
+Route::prefix('administracion-usuarios')->middleware(['auth', 'active', 'role:admin'])->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('usuarios.index');
 });
 
 
 
-Route::middleware(['auth','active', 'role:admin'])->group(function () {
+Route::middleware(['auth', 'active', 'role:admin'])->group(function () {
     Route::resource('users', UserController::class);
 });
 
-Route::prefix('perfil')->middleware(['auth','active'])->group(function () {
+Route::prefix('perfil')->middleware(['auth', 'active'])->group(function () {
     Route::get('/', [PerfilController::class, 'index'])->name('perfil');
     Route::put('/', [PerfilController::class, 'update'])->name('perfil.update');
 });
-
-
-
-
-
-
-
-

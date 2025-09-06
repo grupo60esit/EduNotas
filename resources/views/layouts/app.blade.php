@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>@yield('title')</title>
-<link rel="shortcut icon" href="{{ asset('faviconEdunotas.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('faviconEdunotas.ico') }}" type="image/x-icon">
 
 
     <link rel="shortcut icon" href="{{ asset('faviconEdunotas.ico') }}" type="image/x-icon">
@@ -68,10 +68,9 @@
         <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center"
-                href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
-                  <i class="fa-solid fa-graduation-cap" style="color: #195231;"></i>
+                    <i class="fa-solid fa-graduation-cap" style="color: #195231;"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3" style="color: #195231;">EduNotas</div>
             </a>
@@ -89,28 +88,28 @@
             <div class="sidebar-heading">Panel Operativo</div>
 
             @auth
-                @if (auth()->user()->hasRole(['admin','supervisor','director','maestro','recepcion']))
+                @if (auth()->user()->hasRole(['admin', 'supervisor', 'director', 'maestro', 'recepcion']))
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRecepcion"
                             aria-expanded="false" aria-controls="collapseRecepcion">
-               <i class="fa-solid fa-bell-concierge" style="color: #63E6BE;"></i>
-                            <span>Recepcion</span>
+                            <i class="fa-solid fa-bell-concierge" style="color: #63E6BE;"></i>
+                            <span>Alumnos</span>
                         </a>
                         <div id="collapseRecepcion" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <h6 class="collapse-header">Recepcion de Alumnos:</h6>
-                                <a class="collapse-item" href="{{ route('recepcion') }}">Nuevo Alumno</a>
-                                <a class="collapse-item" href="{{ route('recepcion.notas') }}">Notas</a>
+                                <a class="collapse-item" href="{{ route('recepcion') }}">Nuevo</a>
+                                <a class="collapse-item" href="{{ route('alumnos.index') }}">Alumnos</a>
                             </div>
                         </div>
                     </li>
                 @endif
 
-                @if (auth()->user()->hasRole(['admin','supervisor','director','maestro']))
+                @if (auth()->user()->hasRole(['admin', 'supervisor', 'director', 'maestro']))
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBodega"
                             aria-expanded="false" aria-controls="collapseBodega">
-                          <i class="fa-solid fa-book-open-reader" style="color: #63E6BE;"></i>
+                            <i class="fa-solid fa-book-open-reader" style="color: #63E6BE;"></i>
                             <span>Materias</span>
                         </a>
                         <div id="collapseBodega" class="collapse" data-parent="#accordionSidebar">
@@ -122,11 +121,11 @@
                     </li>
                 @endif
 
-                @if (auth()->user()->hasRole(['admin','supervisor','director','maestro','alumnos']))
+                @if (auth()->user()->hasRole(['admin', 'supervisor', 'director', 'maestro', 'alumnos']))
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRuteo"
                             aria-expanded="false" aria-controls="collapseRuteo">
-                       <i class="fa-solid fa-clipboard" style="color: #63E6BE;"></i>
+                            <i class="fa-solid fa-clipboard" style="color: #63E6BE;"></i>
                             <span>Notas</span>
                         </a>
                         <div id="collapseRuteo" class="collapse" data-parent="#accordionSidebar">
@@ -139,7 +138,7 @@
                     </li>
                 @endif
 
-                @if (auth()->user()->hasRole(['admin','supervisor','director']))
+                @if (auth()->user()->hasRole(['admin', 'supervisor', 'director']))
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse"
                             data-target="#collapseconfiguraciones" aria-expanded="false"

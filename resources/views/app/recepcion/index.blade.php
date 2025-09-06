@@ -6,8 +6,13 @@
             <div class="card-body p-4">
 
                 <h4 class="text-center mb-4">Formulario Ingreso Alumno</h4>
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
-                <form method="POST" action="#">
+                <form method="POST" action="{{ route('alumnos.store') }}">
                     @csrf
 
                     <div class="row">
@@ -28,7 +33,7 @@
                                         <input type="text" class="form-control" id="nombre_alumno" name="nombre_alumno"
                                             required>
                                     </div>
-                                      <div class="mb-3 col-12">
+                                    <div class="mb-3 col-12">
                                         <label for="nombre_correo" class="form-label">Correo</label>
                                         <input type="text" class="form-control" id="nombre_correo" name="nombre_correo"
                                             required>
@@ -71,7 +76,9 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="tipo_paquete" class="form-label">Tipo de Matricula</label>
                                         <select class="form-select" id="tipo_paquete" name="tipo_paquete">
-                                             <option value="">Seleccione...</option>
+                                            <option value="">Seleccione</option>
+                                            <option>Presencial</option>
+                                            <option>En linea</option>
 
 
 
@@ -82,9 +89,9 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="destino" class="form-label">Materia</label>
                                         <select class="form-select" id="destino" name="destino" required>
-                                             <option value="">Seleccione...</option>
-                                          @foreach ($materias as $materia )
-                                                 <option value="{{ $materia->id }}">{{ $materia->nombre }}</option>
+                                            <option value="">Seleccione...</option>
+                                            @foreach ($materias as $materia)
+                                                <option value="{{ $materia->id }}">{{ $materia->nombre }}</option>
                                             @endforeach
                                         </select>
                                     </div>
