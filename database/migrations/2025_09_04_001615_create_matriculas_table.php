@@ -16,7 +16,6 @@ return new class extends Migration
         $table->foreignId('alumno_id')->constrained('alumnos')->onDelete('cascade');
         $table->foreignId('materia_id')->constrained('materias')->onDelete('cascade');
         $table->string('tipo_matricula'); // regular, especial, etc.
-        $table->decimal('precio', 8, 2);
         $table->date('fecha_inicio');
         $table->enum('estado', ['pendiente', 'activa', 'finalizada', 'cancelada'])->default('pendiente');
         $table->timestamps();

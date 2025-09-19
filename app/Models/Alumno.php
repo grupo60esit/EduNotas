@@ -32,4 +32,11 @@ class Alumno extends Model
     {
         return $this->hasMany(Matricula::class);
     }
+
+       public function materias()
+    {
+        return $this->belongsToMany(Materia::class, 'matriculas')
+            ->withPivot('tipo_matricula', 'fecha_inicio', 'estado')
+            ->withTimestamps();
+    }
 }

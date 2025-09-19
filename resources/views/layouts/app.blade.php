@@ -68,7 +68,8 @@
         <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="{{ route('index.dashboardGeneral') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fa-solid fa-graduation-cap" style="color: #195231;"></i>
                 </div>
@@ -98,8 +99,9 @@
                         <div id="collapseRecepcion" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <h6 class="collapse-header">Recepcion de Alumnos:</h6>
-                                <a class="collapse-item" href="{{ route('recepcion') }}">Nuevo</a>
-                                <a class="collapse-item" href="{{ route('alumnos.index') }}">Alumnos</a>
+                                <a class="collapse-item" href="{{ route('recepcion') }}">Crear Alumno</a>
+                                <a class="collapse-item" href="{{ route('alumnos.index') }}">Ver Alumnos</a>
+                                <a class="collapse-item" href="{{ route('alumnos.porMateria') }}">Alumnos Por materias</a>
                             </div>
                         </div>
                     </li>
@@ -110,12 +112,12 @@
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBodega"
                             aria-expanded="false" aria-controls="collapseBodega">
                             <i class="fa-solid fa-book-open-reader" style="color: #63E6BE;"></i>
-                            <span>Materias</span>
+                            <span>Registrar Notas</span>
                         </a>
                         <div id="collapseBodega" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Materias:</h6>
-                                <a class="collapse-item" href="{{ route('materias.index') }}">Tabla de materias</a>
+                                <h6 class="collapse-header">Alumnos Notas:</h6>
+                                <a class="collapse-item" href="{{ route('recepcion.notas') }}">Registro de notas</a>
                             </div>
                         </div>
                     </li>
@@ -130,8 +132,8 @@
                         </a>
                         <div id="collapseRuteo" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Ruteo:</h6>
-                                <a class="collapse-item" href="#">ver Nota</a>
+                                <h6 class="collapse-header">Notas:</h6>
+                                <a class="collapse-item" href="{{ route('notas.lista') }}">ver Nota</a>
 
                             </div>
                         </div>
@@ -148,10 +150,9 @@
                         </a>
                         <div id="collapseconfiguraciones" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Administración:</h6>
+                                <h6 class="collapse-header">Configuraciones:</h6>
                                 <a class="collapse-item" href="#">Horarios</a>
-                                <a class="collapse-item" href="#">Precios</a>
-                                <a class="collapse-item" href="#">Materias</a>
+                                <a class="collapse-item" href="{{ route('materias.index') }}">Materias</a>
                             </div>
                         </div>
                     </li>
@@ -282,6 +283,8 @@
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
     <script src="{{ asset('js/admin/sb-admin-2.min.js') }}"></script>
+    <!-- En el <head> o antes de cerrar </body> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @yield('scripts')
 </body>

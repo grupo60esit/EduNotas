@@ -58,5 +58,9 @@ php artisan migrate
 # 8. (Opcional) Cargar datos iniciales
 php artisan db:seed
 
+# 9 es crear storage para guardar las fotos de los usuarios 
+php artisan storage:link
+
+
 # 9. Levantar el servidor
 php artisan serve

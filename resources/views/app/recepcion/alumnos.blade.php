@@ -1,19 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'usuarios')
+@section('title', 'Edunotas Alumnos')
 
 @section('contenido')
     <div class="container-fluid">
 
-        <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Administración de Alumnos</h1>
 
-
-        <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                <h6 class="m-0 font-weight-bold text-primary">Notas de Alumnos</h6>
-
+                <h6 class="m-0 font-weight-bold text-primary">Detalle de Alumnos</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -22,10 +18,10 @@
                             <tr>
                                 <th>Carnet</th>
                                 <th>Nombre</th>
-                                <th>correo</th>
-                                <th>nombre responsable</th>
-                                <th>telefono responsable</th>
-
+                                <th>Correo</th>
+                                <th>Nombre Responsable</th>
+                                <th>Teléfono Responsable</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,31 +29,60 @@
                                 <tr>
                                     <td>{{ $alumno->carnet }}</td>
                                     <td>{{ $alumno->nombre }}</td>
-                                    <td>{{ $alumno->telefono }}</td>
+                                    <td>{{ $alumno->correo }}</td>
                                     <td>{{ $alumno->nombre_responsable }}</td>
                                     <td>{{ $alumno->telefono_responsable }}</td>
+                                    <td>
+                                        <a class="btn btn-success"
+                                            href="{{ route('alumnos.agregarMateria', $alumno->carnet) }}">Agregar
+                                            materia</a>
+                                        <a class="btn btn-secondary"
+                                            href="{{ route('alumnos.edit', $alumno->carnet) }}">Editar</a>
+                                    </td>
+
                                 </tr>
                             @endforeach
                         </tbody>
-
                     </table>
                 </div>
             </div>
         </div>
 
     </div>
+@endsection
 
 @section('scripts')
     <script>
         $(document).ready(function() {
+            // Inicializar DataTables
             $('#dataTable').DataTable({
-                "pageLength": 5,
-                "lengthMenu": [20, 50, 20, 10, 10],
+                "pageLength": 10,
+                "lengthMenu": [20, 50, 20, 10, 10, 30],
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
                 }
             });
         });
+
+        // Mensajes SweetAlert2
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Éxito!',
+                    text: '{{ session('success') }}',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            @endif
+
+            @if (session('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: '{{ session('error') }}'
+                });
+            @endif
+        });
     </script>
-@endsection
 @endsection

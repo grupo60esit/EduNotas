@@ -30,20 +30,7 @@ class RecepcionController extends Controller
      */
 public function store(Request $request)
 {
-    $request->validate([
-        'nombre' => 'required|string',
 
-    ]);
-
-    $paquete = Paquete::create([
-        'nombre' => $request->nombre,
-
-    ]);
-       // Guardar en BD
-
-    //return redirect()->route('recepcion.paquetesingresados')->with('success', '✅ Paquete registrado correctamente: ' . $paquete->tracking);
-      // Redirigir a la vista de la etiqueta para imprimir
-   // return redirect()->route('alumno.show', $paquete->tracking);
 }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Materia;
 
 class MateriasController extends Controller
 {
@@ -12,7 +13,8 @@ class MateriasController extends Controller
     public function index()
     {
         //
-        return view('app.materias.tablaMaterias');
+      $materias =   Materia::paginate();
+        return view('app.configuraciones.materias', compact('materias'));
     }
 
     /**
