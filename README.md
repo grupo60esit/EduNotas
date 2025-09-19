@@ -9,11 +9,11 @@ Con esta herramienta puedes llevar el control de **materias, notas, estudiantes 
 
 El sistema incluye una landing page atractiva con:
 
-- 🎓 Sección de **presentación del colegio**.  
-- 📚 **Carrusel de materias** (Matemáticas, Ciencias, Arte, Deportes).  
-- 🏫 Información sobre **quiénes somos**.  
-- 🏆 Actividades destacadas.  
-- 📲 Footer con redes sociales.  
+-   🎓 Sección de **presentación del colegio**.
+-   📚 **Carrusel de materias** (Matemáticas, Ciencias, Arte, Deportes).
+-   🏫 Información sobre **quiénes somos**.
+-   🏆 Actividades destacadas.
+-   📲 Footer con redes sociales.
 
 Diseñada con **Bootstrap 5, FontAwesome, Google Fonts y AOS animations**.
 ![alt text](image.png)
@@ -22,11 +22,11 @@ Diseñada con **Bootstrap 5, FontAwesome, Google Fonts y AOS animations**.
 
 ## 🚀 Tecnologías utilizadas
 
-- [Laravel 10](https://laravel.com/) - Framework PHP
-- [Bootstrap 5](https://getbootstrap.com/) - Estilos y componentes
-- [FontAwesome](https://fontawesome.com/) - Iconos
-- [AOS](https://michalsnik.github.io/aos/) - Animaciones en scroll
-- [MySQL](https://www.mysql.com/) - Base de datos
+-   [Laravel 10](https://laravel.com/) - Framework PHP
+-   [Bootstrap 5](https://getbootstrap.com/) - Estilos y componentes
+-   [FontAwesome](https://fontawesome.com/) - Iconos
+-   [AOS](https://michalsnik.github.io/aos/) - Animaciones en scroll
+-   [MySQL](https://www.mysql.com/) - Base de datos
 
 ---
 
@@ -58,9 +58,10 @@ php artisan migrate
 # 8. (Opcional) Cargar datos iniciales
 php artisan db:seed
 
-# 9 es crear storage para guardar las fotos de los usuarios 
+# 9 es crear storage para guardar las fotos de los usuarios
 php artisan storage:link
 
 
-# 9. Levantar el servidor
+# 9. Levantar el servidor prueba
 php artisan serve
+```
